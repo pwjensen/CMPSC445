@@ -4,3 +4,4 @@ numpy
 sns
 scikit-learn
 seaborn
+category_encoders
