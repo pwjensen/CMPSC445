@@ -24,6 +24,30 @@ Finally, before moving on to feature selection, we want to scale all of the data
 
 ## Feature Selection
 
+Since there are so many columns available at the beginning of the preprocessing steps, there is an abundance of options for feature selection. Through different testing, the final csv holds the columns I believe to be the best for creating regression models. Aside from this model, PCA was used in parallel to compare against for each model. Since PCA selects only some of the total features, it could end up being either more or less accurate. In our case, for this exercise PCA results in lower $R^2$ scores.
+
 ## Model Creation
 
-## Conclusion
+Now that the data is preprocessed and we have the features selected for use, we can put out trained data into different models. For each of the models; Linear Regression, Decision Tree, Random Forest, and Gradient Boost, the non-PCA data performed better. Keep in mind, if the dataset is pulled later and cleaned in the same way, results may differ.
+
+**Linear Regression**: $R^2$: .9788 RMS: .0216 MAE: .0077
+**PCA**: $R^2$: .6907 RMS: .0829 MAE: .0630
+
+**Decision Tree**: $R^2$: .9958 RMS: .0097 MAE: .0008
+**PCA**: $R^2$: .9543 RMS: .0319 MAE: .0139
+
+**Random Forest**: $R^2$: .9979 RMS: .0068 MAE: .0007
+**PCA**: $R^2$: .9801 RMS: .0211 MAE: .0095
+
+**Gradient Boost**: $R^2$: .9934 RMS: .0121 MAE: .0041
+**PCA**: $R^2$: .9222 RMS: .0416 MAE: .0277
+
+We want the $R^2$ score to be as close to 1 as possible, but not 1, and we want the RMS and MAE of the model to be as close to 0 as possible. Through these tests, we can see how each model performs on our provided data for both accuracy in the model and how well each model predicts values.
+
+## Conclusion/Discussion
+
+This project helped my understanding in the various ways of preprocessing data. The preprocessing aspect of this project was actually the most difficult and time consuming. Because of the dataset chosen, a lot of the data had to be transformed or dropped completely. After all of the practice, however, I have a better understanding on when to use what methods in cleaning data.
+
+The feature selection and model selection parts of the project were both straight forward. Make models to test the features are selected and try to get the best scores as possible is the main idea here. Since this is the case, once the preprocessing was complete, these parts felt like a breeze to complete.
+
+Overall, thie experience in this project gave me a deeper understanding on regression models and using pandas.
