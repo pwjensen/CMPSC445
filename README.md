@@ -24,23 +24,27 @@ Finally, before moving on to feature selection, we want to scale all of the data
 
 ## Feature Selection
 
-Since there are so many columns available at the beginning of the preprocessing steps, there is an abundance of options for feature selection. Through different testing, the final csv holds the columns I believe to be the best for creating regression models. Aside from this model, PCA was used in parallel to compare against for each model. Since PCA selects only some of the total features, it could end up being either more or less accurate. In our case, for this exercise PCA results in lower $R^2$ scores.
+Since there are so many columns available at the beginning of the preprocessing steps, there is an abundance of options for feature selection. Through different testing, the final csv holds the columns I believe to be the best for creating regression models. We will choose some of these based on checking the correlation in hopes of creating a model more accurate than using all of the features. By removing several of these features present by the end of preprocessing, we can increase the overall performance of all the models mardianally. Aside from those models, PCA was used in parallel to compare against for each model. Since PCA selects only some of the total features, it could end up being either more or less accurate. In our case, for this exercise, PCA results in lower $R^2$ scores.
 
 ## Model Creation
 
 Now that the data is preprocessed and we have the features selected for use, we can put out trained data into different models. For each of the models; Linear Regression, Decision Tree, Random Forest, and Gradient Boost, the non-PCA data performed better. Keep in mind, if the dataset is pulled later and cleaned in the same way, results may differ.
 
-**Linear Regression**: $R^2$: .9788 RMS: .0216 MAE: .0077
-**PCA**: $R^2$: .6907 RMS: .0829 MAE: .0630
+**Linear Regression**: $R^2$: .9787 RMS: .0216 MAE: .0077
 
-**Decision Tree**: $R^2$: .9958 RMS: .0097 MAE: .0008
-**PCA**: $R^2$: .9543 RMS: .0319 MAE: .0139
+**LR PCA**: $R^2$: .6921 RMS: .0828 MAE: .0634
 
-**Random Forest**: $R^2$: .9979 RMS: .0068 MAE: .0007
-**PCA**: $R^2$: .9801 RMS: .0211 MAE: .0095
+**Decision Tree**: $R^2$: .9960 RMS: .0094 MAE: .0008
 
-**Gradient Boost**: $R^2$: .9934 RMS: .0121 MAE: .0041
-**PCA**: $R^2$: .9222 RMS: .0416 MAE: .0277
+**DT PCA**: $R^2$: .9703 RMS: .0257 MAE: .0110
+
+**Random Forest**: $R^2$: .9977 RMS: .0071 MAE: .0007
+
+**RF PCA**: $R^2$: .9861 RMS: .0176 MAE: .0071
+
+**Gradient Boost**: $R^2$: .9931 RMS: .0124 MAE: .0041
+
+**GB PCA**: $R^2$: .9330 RMS: .0386 MAE: .0252
 
 We want the $R^2$ score to be as close to 1 as possible, but not 1, and we want the RMS and MAE of the model to be as close to 0 as possible. Through these tests, we can see how each model performs on our provided data for both accuracy in the model and how well each model predicts values.
 
